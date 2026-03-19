@@ -37,4 +37,15 @@ async function removeItem(userCart, item) {
   }
 }
 
+async function displaycart(userCart) {
+  console.log("\nShopping cart list:");
+  userCart.forEach((item, index) => {
+    console.log(
+      `${index + 1}. ${item.name} - R$ ${item.price} | ${
+        item.quantity
+      }x | Subtotal = ${item.subtotal()}`
+    );
+  });
+}
+
 export { addItem, calculateTotal, deleteItem, removeItem, displaycart };
